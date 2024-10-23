@@ -6,7 +6,8 @@ namespace BootCamp.Chapter
     {
         static void Main(string[] args)
         {
-            
+            /* Homework 1/2 
+
             Console.Write("Enter your first name: "); // ask user for first name
             string firstName = Console.ReadLine(); // store inputed first name as string variable 
             Console.Write("Enter your last name: "); // repeat above with last name
@@ -31,9 +32,70 @@ namespace BootCamp.Chapter
             double bmi = Math.Round((doubleWeight / Math.Pow(heightInMeters, 2)), 3); // use formula to calculate BMI kg/(m*m) m being height in meters rounds it to 3 decimal places
 
             Console.WriteLine($"{firstName} {lastName} has a BMI of {bmi}");
-            Console.WriteLine("Hello"); // Zzz
+            */         
 
-            Console.WriteLine("New Branch Gone");
+            // Homework 3: Refactor old code using functions
         }
+            private static string TakeFirstName()
+            {
+                Console.Write("Enter your first name: "); // ask user for first name
+                string firstName = Console.ReadLine(); // store inputed first name as string variable 
+                return firstName;
+
+            }
+
+            private static string TakeLastName()
+            {
+                string lastName = Console.ReadLine();                 
+                Console.Write("Enter your age: ");
+                return lastName;
+            }
+
+            private static string TakeAge()
+            {
+                Console.Write("Enter your age: "); // repeat with age
+                string age = Console.ReadLine();
+                return age;
+            }
+
+            private static string TakeWeight()
+            {
+                Console.Write("Enter your weight in kg: "); // repeat with weight
+                string weight = Console.ReadLine();
+                return weight;
+            }
+
+            private static string TakeHeight()
+            {
+                Console.Write("Enter your height in cm: "); // repeat with height                
+                string height = Console.ReadLine();
+                return height;   
+            }
+                
+            
+
+            double BMI(string weight, string height, string age)
+            {
+                int intAge = int.Parse(age);                // convert revelant inputs to int and double for further calculation
+                double doubleWeight = double.Parse(weight); 
+                double doubleHeight = double.Parse(height);
+                double heightInMeters = doubleHeight / 100; // convert height in cm to m
+                double bmi = Math.Round((doubleWeight / Math.Pow(heightInMeters, 2)), 3);    
+                return bmi;    
+            }
+
+            private static string BMIString()
+            {
+                return $"{firstName} {lastName} is {age} years old, they have a weight of {weight}kg and a height of {height}cm. Making there BMI: {bmi}";
+            } 
+
+            
+            
+
+
+
+
+
+         
     }
 }
