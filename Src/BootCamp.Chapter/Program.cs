@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices.Marshalling;
-using System.Web;
-using Microsoft.VisualBasic;
+using System.Security.Cryptography;
 
 namespace BootCamp.Chapter
 {
@@ -12,86 +7,14 @@ namespace BootCamp.Chapter
     {
         static void Main(string[] args)
         {
-<<<<<<< Updated upstream
-            /* Homework 1/2 
-
-            Console.Write("Enter your first name: "); // ask user for first name
-            string firstName = Console.ReadLine(); // store inputed first name as string variable 
-            Console.Write("Enter your last name: "); // repeat above with last name
-            string lastName = Console.ReadLine(); 
-            Console.Write("Enter your age: "); // repeat with age
-            string age = Console.ReadLine();
-            Console.Write("Enter your weight in kg: "); // repeat with weight
-            string weight = Console.ReadLine();
-            Console.Write("Enter your height in cm: "); // repeat with height
-            string height = Console.ReadLine();
-
-            // write out given data in string using either concatenation or interpolated string
-            Console.WriteLine(firstName + " " + lastName + " is " + age + " years old, they have a weight of " + weight + "kg and a height of " + height + "cm." ); // concatenation
-            Console.WriteLine($"{firstName} {lastName} is {age} years old, they have a weight of {weight}kg and a height of {height}cm."); // interpolation
-
-            int intAge = int.Parse(age);                // convert revelant inputs to int and double for further calculation
-            double doubleWeight = double.Parse(weight); 
-            double doubleHeight = double.Parse(height);
-
-
-            double heightInMeters = doubleHeight / 100; // convert height in cm to m
-            double bmi = Math.Round((doubleWeight / Math.Pow(heightInMeters, 2)), 3); // use formula to calculate BMI kg/(m*m) m being height in meters rounds it to 3 decimal places
-
-            Console.WriteLine($"{firstName} {lastName} has a BMI of {bmi}");
-            */         
-
-            // Homework 3: Refactor old code using functions
-        
-                Console.Write("Enter your first name: "); // ask user for first name
-                string firstName = Console.ReadLine(); // store inputed first name as string variable 
-                Console.Write("Enter your last name: "); // repeat above with last name
-                string lastName = Console.ReadLine(); 
-                Console.Write("Enter your age: "); // repeat with age
-                string age = Console.ReadLine();
-                Console.Write("Enter your weight in kg: "); // repeat with weight
-                string weight = Console.ReadLine();
-                Console.Write("Enter your height in cm: "); // repeat with height
-                string height = Console.ReadLine();
-                
-            
-
-            string BMI(string weight, string height, string age)
-            {
-                int intAge = int.Parse(age);                // convert revelant inputs to int and double for further calculation
-                double doubleWeight = double.Parse(weight); 
-                double doubleHeight = double.Parse(height);
-                double heightInMeters = doubleHeight / 100; // convert height in cm to m
-                double bmi = Math.Round((doubleWeight / Math.Pow(heightInMeters, 2)), 3);    
-
-                return $"{firstName} {lastName} is {age} years old, they have a weight of {weight}kg and a height of {height}cm. Making there BMI: {bmi}";      
-            }
-
-            
-            Console.WriteLine(BMI(weight, height, age));
-
-
-
-
-
-        } 
-=======
-            int[] array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            int[] array1 = [ 4, 6, 9, 2, 1 ];
 
             Console.WriteLine(array1.Length);
             Console.WriteLine();
-             
-          // PrintArray(array1);
-
-            Array.Sort(array1);
-            Console.WriteLine();
-            Array.Reverse(array1);
-
-          //  PrintArray(array1);
 
             PrintArray(array1);
 
-            int[] array2 = RemoveAtIndex(array1, 4);
+            int[] array2 = ArraySort(array1);
 
             PrintArray(array2);
         }
@@ -189,19 +112,49 @@ namespace BootCamp.Chapter
             return array2;
         }
 
-        
+        public static int[] ArraySort(int[] array)
+        {
+            int[] array2 = new int[array.Length];
+
+            for(int i =0; i < array.Length; i++)
+            {
+                array2[i] = array[i];
+            }
+
+            for(int i = 0; i < array.Length; i++)
+            {
+              if(array[i] < array2[i])
+              {
+                array2[i] = array[i];
+              }
+            }
+
+            return array2;
+        }
 
         
 
-        
-
-       
-
-       
 
 
-                  
-            
->>>>>>> Stashed changes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
